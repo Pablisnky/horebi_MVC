@@ -1,0 +1,1 @@
+<h1>Vista articulo cargada exitosamente</h1>

@@ -1,0 +1,21 @@
+<?php
+// Se diseña el contolador principal, se encarga de cargar los modelos y las vistas
+class Controlador{
+    
+    //Carga el modelo
+    public function modelo($modelo){
+        require_once("../app/modelos/" . $modelo . ".php");
+        return new $modelo();
+    }
+    
+    //Carga la vista
+    public function vista($vista, $Datos=[]){
+        // se chequea si el archivo vista existe
+        if(file_exists("../app/vistas/" . $vista . ".php")){
+            require_once("../app/vistas/" . $vista . ".php");
+        }
+        else{
+            die("La vista no existe");
+        }
+    }
+}
